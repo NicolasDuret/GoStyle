@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Creation d'un Compte
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
+    <ion-item lines="full">
+      <ion-label position="floating">Nom</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Prenom</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Mot de Passe</ion-label>
+      <ion-input type="password" required></ion-input>
+    </ion-item>
+
+    <!-- Radio buttons -->
+    <ion-radio-group lines="full">
+      <ion-list-header>
+        <ion-label>Genre</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label>Homme</ion-label>
+        <ion-radio slot="start" value="male" checked></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Femme</ion-label>
+        <ion-radio slot="start" value="female"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block">Valider</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
