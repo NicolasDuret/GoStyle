@@ -8,27 +8,35 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        path: 'scan',
+        loadChildren: () => import('../scan/scan.module').then(m => m.ScanPageModule)
       },
       {
-        path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        path: 'profil',
+        loadChildren: () => import('../Profil/profil.module').then(m => m.profilPageModule)
       },
       {
-        path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        path: 'liste',
+        loadChildren: () => import('../Liste/liste.module').then(m => m.listePageModule)
+      },
+      {
+        path: 'connexion',
+        loadChildren: () => import('../Connexion/connexion.module').then(m => m.connexionPageModule)
+      },
+      {
+        path: 'coupon',
+        loadChildren: () => import('../Coupon/coupon.module').then(m => m.couponPageModule)
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/profil',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/profil',
     pathMatch: 'full'
   }
 ];
