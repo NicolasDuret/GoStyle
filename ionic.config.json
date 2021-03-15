@@ -1,0 +1,8 @@
+{
+  "name": "GoStyle",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "fe63e62e"
+}
