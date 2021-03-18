@@ -19,4 +19,6 @@ import { listePageRoutingModule } from './liste-routing.module';
   ],
   declarations: [liste]
 })
-export class listePageModule {}
+export class listePageModule {
+  
+}
