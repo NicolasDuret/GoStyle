@@ -2,7 +2,8 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Scan } from './scan';
+import { Scan } from './scan.page';
+import { QRCodeModule } from 'angularx-qrcode';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { ScanPageRoutingModule } from './scan-routing.module';
@@ -13,7 +14,8 @@ import { ScanPageRoutingModule } from './scan-routing.module';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    ScanPageRoutingModule
+    ScanPageRoutingModule,
+    QRCodeModule
   ],
   declarations: [Scan]
 })

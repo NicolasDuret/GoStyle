@@ -28,8 +28,12 @@ const routes: Routes = [
         loadChildren: () => import('../Coupon/coupon.module').then(m => m.couponPageModule)
       },
       {
+        path: 'creation_compte',
+        loadChildren: () => import('../Creation_Compte/creation_compte.module').then(m => m.creation_comptePageModule)
+      },
+      {
         path: '',
-        redirectTo: '/tabs/profil',
+        redirectTo: '/tabs/liste',
         pathMatch: 'full'
       }
     ]

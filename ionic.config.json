@@ -1,7 +1,10 @@
 {
   "name": "GoStyle",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
   },
   "type": "angular",
   "id": "fe63e62e"
