@@ -1,0 +1,46 @@
+.coupon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.image_coupon {
+    padding-top: 30px;
+    text-align-last: center;
+}
+.general_information_coupon {
+    padding-top: 45px;
+}
+.coupon_informations {
+    display: flex;
+    flex-direction: column;
+}
+.name {
+    padding-top: 40px;
+    text-align-last: center;
+}
+.bloc_information {
+    text-align-last: center;
+}
+.date_conditions_pourcent {
+    display: flex;
+    flex-direction: row;
+    padding-top: 15px;
+    justify-content: center;
+}
+.pourcent_condition {
+    padding-right: 50px;
+}
+.ville_utils {
+    padding-top: 60px;
+    text-align-last: center;
+}
+.style_log{
+    width: 70%;
+}
+.pourcent{
+    padding-left: 35px
+}
+.dates_validites{
+    padding-left: 20px;
+    margin-left: 20px;
+}

@@ -1,17 +1,72 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Coupon
-    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">COUPON</ion-title>
+      <ion-title size="large">Coupon</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <app-explore-container name="Coupon"></app-explore-container>
+  <div class="coupon">
+    <div class="image_coupon">
+      <img class="style_log" src="../assets/user.png">
+    </div>
+    <div class="coupon_informations">
+      <div class="name">
+        CouponName
+      </div>
+      <div class="general_information_coupon">
+        <div class="bloc_information">
+          <div class="date_conditions_pourcent">
+              <div class="pourcent_condition">
+                <div class="pourcent">
+                  <div>
+                    pourcentage:
+                  </div>
+                  <div>
+                    10%
+                  </div>
+                </div>
+              </div>
+              <div class="dates_validites">
+                <div>
+                  valable du:
+                </div>
+                <div>
+                  20/03/2021
+                </div>
+              </div>
+          </div>
+          <div class="date_conditions_pourcent">
+            <div class="pourcent_condition">
+              <div>
+                Conditions d'utilisations:
+              </div>
+              <div>
+                Avoir un minimum <br>d’achat de 35€
+              </div>
+            </div>
+            <div>
+              <div>
+                au:
+              </div>
+              <div>
+                22/03/2021
+              </div>
+            </div>
+          </div>
+          <div class="ville_utils">
+            <div>
+              Ville d'utilisation:
+            </div>
+            <div>
+              Nantes
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </ion-content>

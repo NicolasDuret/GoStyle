@@ -1,8 +1,5 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Profil
-    </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -12,6 +9,42 @@
       <ion-title size="large">PROFIL</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <app-explore-container name="Profil"></app-explore-container>
+  <div class="profile">
+    <div class="avatar">
+      <img class="style_log" src="../assets/user.png">
+    </div>
+    <div class="profil_informations">
+      <div class="name">
+        FirstName LastName
+      </div>
+      <div class="general_information">
+        <div class="birthday_city">
+          <div class="city">
+            <div>
+              Ville:
+            </div>
+            <div>
+              Nantes
+            </div>
+          </div>
+          <div class="birthday">
+            <div>
+              Anniversaire:
+            </div>
+            <div>
+              22/03/2021
+            </div>
+          </div>
+        </div>
+        <div class="email">
+          <div>
+            email:
+          </div>
+          <div>
+            user@user.fr
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </ion-content>
