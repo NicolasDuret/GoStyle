@@ -1,17 +1,17 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Connexion
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-item>
+  <ion-label><b>Email</b></ion-label>
+  <ion-input [(ngModel)]="loginData.email" placeholder="Entrez votre email"></ion-input>
+</ion-item>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">CONNEXION</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-item>
+  <ion-label><b>Mot de passe</b></ion-label>
+  <ion-input [(ngModel)]="loginData.password" type="password" placeholder="Entrez votre mot de passe"></ion-input>
+</ion-item>
 
-  <app-explore-container name="Connexion page"></app-explore-container>
-</ion-content>
+<div class="ion-padding">
+  <ion-button (click)="login()" expand="block" color="primary">Connexion</ion-button>
+
+  <p style="text-align: center;">ou</p>
+
+  <ion-button (click)="signUp()" expand="block" color="tertiary">Inscription</ion-button>
+</div>
