@@ -31,6 +31,11 @@ const routes: Routes = [
         path: 'creation_compte',
         loadChildren: () => import('../Creation_Compte/creation_compte.module').then(m => m.creation_comptePageModule)
       },
+      
+      {
+        path: 'creation_coupon',
+        loadChildren: () => import('../Creation_coupon/creation_coupon.module').then(m => m.creation_couponPageModule)
+      },
       {
         path: '',
         redirectTo: '/tabs/liste',
