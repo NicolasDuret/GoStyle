@@ -10,42 +10,42 @@
   <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
     <ion-item lines="full">
       <ion-label position="floating">Nom</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input type="text" [(ngModel)]="data.nom" required></ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Description</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input type="text" [(ngModel)]="data.description" required></ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Date de Début</ion-label>
-      <ion-input type="date" required></ion-input>
+      <ion-input type="date" [(ngModel)]="data.dateDebut" required></ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Date de Fin</ion-label>
-      <ion-input type="date" required></ion-input>
+      <ion-input type="date" [(ngModel)]="data.dateExpiration" required></ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Montant Minimum</ion-label>
-      <ion-input type="number" required></ion-input>
+      <ion-input type="number" [(ngModel)]="data.montantMinimum" required></ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Ville</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input type="text" [(ngModel)]="data.ville" required></ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Nombre d'utilisation possible</ion-label>
-      <ion-input type="number" required></ion-input>
+      <ion-input type="number" [(ngModel)]="data.nbUtilisation" required></ion-input>
     </ion-item>
     <br>
     <ion-row>
       <ion-col>
-        <ion-button type="submit" color="danger" expand="block">Valider</ion-button>
+        <ion-button type="submit" color="danger" expand="block" (click)="submit()">Valider</ion-button>
       </ion-col>
     </ion-row>
   </form>
