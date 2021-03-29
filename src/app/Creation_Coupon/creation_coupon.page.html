@@ -7,45 +7,50 @@
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
+  <form  (ngSubmit)="submitForm()" novalidate>
     <ion-item lines="full">
       <ion-label position="floating">Nom</ion-label>
-      <ion-input type="text" [(ngModel)]="data.nom" required></ion-input>
+      <ion-input type="text" [(ngModel)]="data.name" [ngModelOptions]="{standalone: true}" required></ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Description</ion-label>
-      <ion-input type="text" [(ngModel)]="data.description" required></ion-input>
+      <ion-input type="text" [(ngModel)]="data.description"  [ngModelOptions]="{standalone: true}"required></ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Date de Début</ion-label>
-      <ion-input type="date" [(ngModel)]="data.dateDebut" required></ion-input>
+      <ion-input type="date" [(ngModel)]="data.first_day" [ngModelOptions]="{standalone: true}" required></ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Date de Fin</ion-label>
-      <ion-input type="date" [(ngModel)]="data.dateExpiration" required></ion-input>
+      <ion-input type="date" [(ngModel)]="data.last_day" [ngModelOptions]="{standalone: true}" required></ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Montant Minimum</ion-label>
-      <ion-input type="number" [(ngModel)]="data.montantMinimum" required></ion-input>
+      <ion-input type="number" [(ngModel)]="data.min_amount" [ngModelOptions]="{standalone: true}" required></ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Ville</ion-label>
-      <ion-input type="text" [(ngModel)]="data.ville" required></ion-input>
+      <ion-input type="text" [(ngModel)]="data.city" [ngModelOptions]="{standalone: true}" required></ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Nombre d'utilisation possible</ion-label>
-      <ion-input type="number" [(ngModel)]="data.nbUtilisation" required></ion-input>
+      <ion-input type="number" [(ngModel)]="data.nb_use" [ngModelOptions]="{standalone: true}" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Image</ion-label>
+      <ion-input type="text" [(ngModel)]="data.image" [ngModelOptions]="{standalone: true}" required></ion-input>
     </ion-item>
     <br>
     <ion-row>
       <ion-col>
-        <ion-button type="submit" color="danger" expand="block" (click)="submit()">Valider</ion-button>
+        <ion-button type="submit" color="danger" expand="block" (click)="sendPostRequest()">Valider</ion-button>
       </ion-col>
     </ion-row>
   </form>

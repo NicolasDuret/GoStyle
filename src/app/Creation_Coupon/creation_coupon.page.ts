@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { HttpClient } from '@angular/common/http';
-import { NavController } from '@ionic/angular';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-creation_coupon',
@@ -11,35 +9,37 @@ import { HttpClientModule } from '@angular/common/http';
 ]
 })
 export class creation_coupon {
-  form: FormGroup;
   data:any = {};
+  http: any;
 
-  constructor(public fb: FormBuilder,private http: HttpClient,public navCtrl: NavController) {
-    this.form = this.fb.group({
-      nom: [''],
-      description: [''],
-      dateDebut: [''],
-      dateExpiration: [''],
-      montantMinimum: [''],
-      ville: [''],
-      nbUtilisation: [''],
-    })
+  constructor(public httpClient: HttpClient) {
   }
+  ngOnInit(){}
  
-  submit() {
-    var formData: any = new FormData();
-    formData.append("nom", this.form.get('nom').value);
-    formData.append("description", this.form.get('description').value);
-    formData.append("dateDebut", this.form.get('dateDebut').value);
-    formData.append("dateExpiration", this.form.get('dateExpiration').value);
-    formData.append("montantMinimum", this.form.get('montantMinimum').value);
-    formData.append("ville", this.form.get('ville').value);
-    formData.append("nbUtilisation", this.form.get('nbUtilisation').value);
-  
-    this.http.post('http://localhost:8181/api-gostyle/coupons', formData).subscribe(
-      (response) => console.log(response),
-      (error) => console.log(error)
-    )
-  }
+  sendPostRequest() {
+    var headers = new Headers();
+    headers.append("Accept", 'application/json');
+    headers.append('Content-Type', 'application/json' );
 
+    let postData = {
+      city: [''],
+      description: [''],
+      discount: [''],
+      first_day: [''],
+      image: [''],
+      last_day: [''],
+      min_amount: [''],
+      name: [''],
+      nb_use: [''],
+    }
+
+    this.httpClient.post("http://localhost:8181/api-gostyle/coupons", postData)
+      .subscribe(data => {
+        console.log(data['_body']);
+       }, error => {
+        console.log(error);
+      });
+  }
 }
+
+
