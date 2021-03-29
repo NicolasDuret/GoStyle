@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-scan',
@@ -12,10 +13,13 @@ export class Scan {
   public myAngularxQrCode: string = null;
   public showCamera = false;
   public textScanned: string = '';
-  
+  private _couponScannUrl = 'http://localhost:8181/api-gostyle/coupons/search/by-name';
+  scann = null;
+
   constructor(
     private iab: InAppBrowser,
     private qrScanner: QRScanner,
+    private http: HttpClient
   ) {}
   createQRCode() {
     this.myAngularxQrCode = this.textToCode;
@@ -25,7 +29,7 @@ export class Scan {
   openLink(link: any) {
     const browser = this.iab.create(link, '_system', 'location=yes');
   }
-  
+
   scanCode() {
     this.showCamera = true;
     // Optionally request the permission early
@@ -40,6 +44,10 @@ export class Scan {
           this.qrScanner.hide(); // hide camera preview
           scanSub.unsubscribe(); // stop scanning
           this.showCamera = false;
+          this.getCoupon().subscribe(result => {
+            this.scann = result;
+            console.log('Je suis là')
+          })
         });
       } else if (status.denied) {
         // camera permission was permanently denied
@@ -48,6 +56,11 @@ export class Scan {
       }
     })
     .catch((e: any) => console.log('Error is', e));
+  }
+
+  getCoupon(){
+    
+    return this.http.get(`${this._couponScannUrl}?name=${this.textScanned}`);
   }
 
   closeCamera() {

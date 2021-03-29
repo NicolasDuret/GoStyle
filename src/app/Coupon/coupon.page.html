@@ -3,7 +3,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" *ngIf="coupon">
   <ion-header collapse="condense">
     <ion-toolbar class="logo">
       <img class="style_log" src="../assets/logoGoStyle.png">
@@ -11,11 +11,11 @@
   </ion-header>
   <div class="coupon">
     <div class="image_coupon">
-      <img class="style_log" src="../assets/user.png">
+      <img [src]="coupon.image" class="info-img">
     </div>
     <div class="coupon_informations">
       <div class="name">
-        CouponName
+        {{ coupon.name }}
       </div>
       <div class="general_information_coupon">
         <div class="bloc_information">
@@ -26,7 +26,7 @@
                     pourcentage:
                   </div>
                   <div>
-                    10%
+                    {{ coupon.discount }} %
                   </div>
                 </div>
               </div>
@@ -45,7 +45,7 @@
                 Conditions d'utilisations:
               </div>
               <div>
-                Avoir un minimum <br>d’achat de 35€
+                {{ coupon.description }}
               </div>
             </div>
             <div>
@@ -62,7 +62,7 @@
               Ville d'utilisation:
             </div>
             <div>
-              Nantes
+              {{ coupon.city }}
             </div>
           </div>
         </div>

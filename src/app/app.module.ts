@@ -14,6 +14,8 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
+import { HttpClientModule } from '@angular/common/http';
+
 export const firebaseConfig = {
   apiKey: '**-**',
   authDomain: 'auth-**.firebaseapp.com',
@@ -26,7 +28,7 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, AngularFireModule.initializeApp(firebaseConfig), AngularFireAuthModule,],
+  imports: [BrowserModule, IonicModule.forRoot(),  HttpClientModule, AppRoutingModule, AngularFireModule.initializeApp(firebaseConfig), AngularFireAuthModule,],
   providers: [
     StatusBar,
     SplashScreen,

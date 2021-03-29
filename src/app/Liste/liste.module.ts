@@ -8,11 +8,14 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { listePageRoutingModule } from './liste-routing.module';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
+    HttpClientModule,
     ExploreContainerComponentModule,
     RouterModule.forChild([{ path: '', component: liste }]),
     listePageRoutingModule,
@@ -20,5 +23,5 @@ import { listePageRoutingModule } from './liste-routing.module';
   declarations: [liste]
 })
 export class listePageModule {
-  
+
 }

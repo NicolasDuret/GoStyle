@@ -12,30 +12,6 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 })
 export class AppComponent {
   constructor(
-    private router: Router,
-    public afAuth: AngularFireAuth,
-    private platform: Platform,
-    private splashScreen: SplashScreen,
-    private statusBar: StatusBar
   ) {
-      this.initializeApp();
-      this.afAuth.authState.subscribe(auth => {
-        console.log('Connecté: ' + auth.uid);
-      });
-  }
-  initializeApp() {
-    this.platform.ready().then(() => {
-      this.afAuth.authState.subscribe(auth => {
-        if (!auth) {
-          console.log('non connecté');
-          this.router.navigateByUrl('/tabs/connexion');
-        } else {
-          this.router.navigateByUrl('/');
-          console.log('Connecté: ' + auth.uid);
-        }
-      });
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-    });
   }
 }

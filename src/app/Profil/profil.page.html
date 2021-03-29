@@ -3,7 +3,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" *ngIf="user">
   <ion-header collapse="condense">
     <ion-toolbar>
       <img class="style_log" src="../assets/logoGoStyle.png">
@@ -15,7 +15,7 @@
     </div>
     <div class="profil_informations">
       <div class="name">
-        FirstName LastName
+        {{ user.firstname }} {{ user.lastname }}
       </div>
       <div class="general_information">
         <div class="birthday_city">
@@ -24,7 +24,7 @@
               Ville:
             </div>
             <div>
-              Nantes
+              {{ user.city }}
             </div>
           </div>
           <div class="birthday">
@@ -41,7 +41,7 @@
             email:
           </div>
           <div>
-            user@user.fr
+            {{ user.email }}
           </div>
         </div>
       </div>
