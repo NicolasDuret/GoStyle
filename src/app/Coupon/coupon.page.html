@@ -1,15 +1,10 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true" *ngIf="coupon">
-  <ion-header collapse="condense">
+<ion-content [fullscreen]="true">
+  <ion-header>
     <ion-toolbar class="logo">
       <img class="style_log" src="../assets/logoGoStyle.png">
     </ion-toolbar>
   </ion-header>
-  <div class="coupon">
+  <div class="coupon" *ngIf="coupon">
     <div class="image_coupon">
       <img [src]="coupon.image" class="info-img">
     </div>
@@ -35,7 +30,7 @@
                   valable du:
                 </div>
                 <div>
-                  20/03/2021
+                  {{ coupon.firstDay }}
                 </div>
               </div>
           </div>
@@ -53,7 +48,7 @@
                 au:
               </div>
               <div>
-                22/03/2021
+                {{ coupon.lastDay }}
               </div>
             </div>
           </div>

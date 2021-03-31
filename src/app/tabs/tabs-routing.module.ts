@@ -19,24 +19,28 @@ const routes: Routes = [
         path: 'liste',
         loadChildren: () => import('../Liste/liste.module').then(m => m.listePageModule)
       },
+
       {
-        path: 'coupon',
+        path: 'coupon/:id',
         loadChildren: () => import('../Coupon/coupon.module').then(m => m.couponPageModule)
+      },
+      {
+        path: 'connexion',
+        loadChildren: () => import('../Connexion/connexion.module').then(m => m.connexionPageModule)
       },
       {
         path: 'creation_compte',
         loadChildren: () => import('../Creation_Compte/creation_compte.module').then(m => m.creation_comptePageModule)
       },
-      {
-        path: '',
-        redirectTo: '/tabs/liste',
-        pathMatch: 'full'
-      }
     ]
   },
   {
+    path: 'connexion',
+    loadChildren: () => import('../Connexion/connexion.module').then(m => m.connexionPageModule)
+  },
+  {
     path: '',
-    redirectTo: '/tabs/profil',
+    redirectTo: 'connexion',
     pathMatch: 'full'
   }
 ];

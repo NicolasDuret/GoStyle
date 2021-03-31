@@ -1,15 +1,10 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true" *ngIf="user">
-  <ion-header collapse="condense">
+<ion-content [fullscreen]="true">
+  <ion-header>
     <ion-toolbar>
       <img class="style_log" src="../assets/logoGoStyle.png">
     </ion-toolbar>
   </ion-header>
-  <div class="profile">
+  <div class="profile" *ngIf="user">
     <div class="avatar">
       <img class="style_log" src="../assets/user.png">
     </div>
@@ -32,7 +27,7 @@
               Anniversaire:
             </div>
             <div>
-              22/03/2021
+              {{ user.birthday }}
             </div>
           </div>
         </div>
@@ -46,8 +41,6 @@
         </div>
       </div>
     </div>
-    <ion-button color="medium">
-      <ion-label>Déconnexion</ion-label>
-  </ion-button>
+    <ion-button [routerLink]="['']">Déconnexion</ion-button>
   </div>
 </ion-content>

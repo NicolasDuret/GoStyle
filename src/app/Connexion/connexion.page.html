@@ -1,0 +1,21 @@
+
+<ion-content [fullscreen]="true">
+  <div class="placement">
+    <ion-toolbar class="logo">
+        <img class="style_log" src="../assets/logoGoStyle.png">
+      </ion-toolbar>
+    <ion-item>
+      <ion-label><b>Email</b></ion-label>
+      <ion-input [(ngModel)]="loginData.email" placeholder="Entrez votre email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label><b>Mot de passe</b></ion-label>
+      <ion-input [(ngModel)]="loginData.password" type="password" placeholder="Entrez votre mot de passe"></ion-input>
+    </ion-item>
+
+    <div class="ion-padding">
+      <ion-button [routerLink]="['/tabs/profil']">Connexion</ion-button>
+    </div>
+  </div>
+</ion-content>

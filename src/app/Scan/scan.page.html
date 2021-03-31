@@ -12,9 +12,6 @@
 </ion-header>
 
 <ion-content>
-
-  <ion-icon *ngIf="showCamera" class="frame" name="qr-scanner"></ion-icon>
-
   <div *ngIf="!showCamera">
     <ion-item *ngIf="textScanned" lines="none" (click)="openLink(textScanned)">
       <ion-label>
@@ -24,13 +21,12 @@
       <ion-icon slot="end" name="open"></ion-icon>
     </ion-item>
     <ion-button expand="block" (click)="scanCode()" >
-      <ion-icon slot="start" name="qr-scanner"></ion-icon>
       Scanner un QR Code
     </ion-button>
   </div>
     <div *ngIf="!showCamera">
-      
-    
+
+
       <div class="center" *ngIf="myAngularxQrCode">
         <qrcode [qrdata]="myAngularxQrCode" [size]="250" [level]="'M'"></qrcode>
       </div>
