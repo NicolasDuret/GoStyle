@@ -7,10 +7,11 @@ const routes: Routes = [
     path: 'tabs',
     component: TabsPage,
     children: [
-      // {
-      //   path: 'scan',
-      //   loadChildren: () => import('../scan/scan.module').then(m => m.ScanPageModule)
-      // },
+      {
+        path: 'scan',
+        loadChildren: () =>
+          import('../Scan/scan.module').then((m) => m.ScanPageModule),
+      },
       {
         path: 'profil',
         loadChildren: () =>
@@ -41,10 +42,13 @@ const routes: Routes = [
           ),
       },
 
-      // {
-      //   path: 'creation_coupon',
-      //   loadChildren: () => import('../Creation_coupon/creation_coupon.module').then(m => m.creation_couponPageModule)
-      // },
+      {
+        path: 'creation_coupon',
+        loadChildren: () =>
+          import('../Creation_Coupon/creation_coupon.module').then(
+            (m) => m.creation_couponPageModule
+          ),
+      },
       {
         path: '',
         redirectTo: '/tabs/liste',
